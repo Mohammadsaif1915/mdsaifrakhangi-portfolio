@@ -1,4 +1,4 @@
-// Smooth scrolling effect for navigation links
+// Smooth scrolling for navigation
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function(event) {
         event.preventDefault();
@@ -7,7 +7,7 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// Adding fade-in effect on scroll
+// Fade-in effect on scroll
 document.addEventListener("scroll", function () {
     let elements = document.querySelectorAll(".fade-in, .slide-in");
     let windowHeight = window.innerHeight;
