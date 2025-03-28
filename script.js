@@ -1,22 +1,15 @@
-// Smooth scrolling for navigation
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(event) {
-        event.preventDefault();
-        const section = document.querySelector(this.getAttribute('href'));
-        section.scrollIntoView({ behavior: 'smooth' });
-    });
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".box");
 
-// Fade-in effect on scroll
-document.addEventListener("scroll", function () {
-    let elements = document.querySelectorAll(".fade-in, .slide-in");
-    let windowHeight = window.innerHeight;
-    
-    elements.forEach(el => {
-        let positionFromTop = el.getBoundingClientRect().top;
-        if (positionFromTop - windowHeight <= 0) {
-            el.style.opacity = 1;
-            el.style.transform = "translateY(0)";
-        }
-    });
+    const revealOnScroll = () => {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight - 100) {
+                section.classList.add("show");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Initial check on load
 });
