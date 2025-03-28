@@ -1,86 +1,128 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    text-align: center;
+    background: url("C:\Users\Administrator\Desktop\PORTFOLIO\Images\bg.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
 }
 
-/* Header */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+/* Navigation Bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ff9800;
+    color: #ff5733;
 }
 
-/* Sections */
-section {
-    padding: 40px;
-    text-align: center;
-    background: white;
-    margin: 20px auto;
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 80px 20px;
+    margin-top: 60px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: linear-gradient(to right, #ff5733, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 15px rgba(255, 87, 51, 0.7);
+}
+
+h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+/* Section Boxes */
+.box {
+    padding: 30px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.8);
     width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Skills Section */
-.skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.skill {
-    text-align: center;
-    width: 120px;
-}
-
-.skill img {
-    width: 80px;
-    height: 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
     transition: transform 0.3s ease-in-out;
 }
 
-.skill img:hover {
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Skills & Projects */
+.skills-container, .projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill img, .project img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.skill img:hover, .project img:hover {
     transform: scale(1.1);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Contact Links */
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff5733;
+    transition: color 0.3s;
 }
 
-@keyframes slideIn {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+a:hover {
+    color: #ff8c00;
 }
 
-.fade-in { animation: fadeIn 2s ease-in-out; }
-.slide-in { animation: slideIn 1.5s ease-in-out; }
+/* Scroll Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.box {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
